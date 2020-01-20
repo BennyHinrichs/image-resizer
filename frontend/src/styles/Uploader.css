@@ -1,0 +1,41 @@
+.Uploader {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: left;
+}
+
+.Content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  padding-top: 1.5rem;
+  width: 100%;
+}
+
+.Files {
+  align-items: flex-start;
+  flex: 1;
+  justify-items: flex-start;
+  margin-left: 3rem;
+  overflow-y: auto;
+}
+
+.Actions {
+  align-items: flex-end;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.buttons > * {
+  margin-left: 1rem;
+}
+
+.Title {
+  color: hsl(0, 0%, 33%);
+  margin-bottom: 3rem;
+}

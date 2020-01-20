@@ -1,0 +1,21 @@
+.Progress {
+  background-color: hsl(0, 0%, 70%);
+  border-radius: 2px;
+  height: .5rem;
+  margin: .5rem 0;
+  transition: .3s;
+  width: 100%;
+}
+
+.Progress.preload {
+  height: 0;
+  margin: 0;
+}
+
+.Progess-complete {
+  background-color: hsl(262, 52%, 47%);
+  border-radius: 2px;
+  height: 100%;
+  transform-origin: left;
+  width: 100%;
+}

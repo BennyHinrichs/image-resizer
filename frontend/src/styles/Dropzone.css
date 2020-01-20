@@ -1,0 +1,34 @@
+.Dropzone {
+  align-items: center;
+  background-color: hsl(0, 0%, 100%);
+  border: 2px dashed hsl(0, 1%, 73%);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  height: 20rem;
+  justify-content: center;
+  transition: .5s;
+  width: 20rem;
+}
+
+.Icon {
+  opacity: 0.3;
+  height: 6rem;
+  transition: transform .4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    opacity .3s linear;
+  width: 6rem;
+}
+
+.FileInput {
+  display: none;
+}
+
+.Dropzone:hover, .Dropzone.hover {
+  border-color: hsl(193, 95%, 68%);
+}
+
+.Dropzone:hover .Icon, .Dropzone.hover .Icon {
+  opacity: .2;
+  transform: scale(1.2);
+}
