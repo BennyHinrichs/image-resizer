@@ -18,6 +18,7 @@ Thank you for visiting my repo.
 - Figure out that tooltip position drift issue on RangeSlider
   - Recalculate tooltip position on window/parent resize
 - Present/persist the return results better
+- Vertical for small screens
 
 ## Backend
 
