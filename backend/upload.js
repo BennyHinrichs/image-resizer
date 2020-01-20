@@ -1,3 +1,4 @@
+import fs from 'fs'
 import path from 'path'
 import sizeOf from 'image-size'
 import jimp from 'jimp'
@@ -10,7 +11,14 @@ const response = {}
 export const uploadEvents = [
   {
     event: 'fileBegin',
-    action: (req, res, next, name, file) => file.path = path.join(__dirname + '/uploads/' + file.name)
+    action: (req, res, next, name, file) => {
+      try {
+        !fs.existsSync(__dirname + '/uploads') && fs.mkdirSync(__dirname + '/uploads')
+        file.path = path.join(__dirname + '/uploads/' + file.name)
+      } catch (ex) {
+        throw new Error(ex)
+      }
+    }
   },{
     event: 'file',
     action: (req, res, next, name, file) => {
