@@ -1,7 +1,12 @@
+# Hello
+
+Thank you for visiting my repo.
+
 # Additional Possibilities
 
 ## Frontend
 
+- Filter by MIME type
 - Error handling for failed upload
 - Cap batch size
   - Upload cicle turns red instead of blue, cloud doesn't animate
