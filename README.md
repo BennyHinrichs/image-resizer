@@ -15,8 +15,9 @@ Thank you for visiting my repo.
   - Additional state for upload complete, waiting for server to process
 - Upload button becomes cancel button during upload
 - Clear becomes Clear Uploaded after upload, then back to Clear on click
-- Figure out that tooltip position float issue on RangeSlider
+- Figure out that tooltip position drift issue on RangeSlider
   - Recalculate tooltip position on window/parent resize
+- Present/persist the return results better
 
 ## Backend
 
