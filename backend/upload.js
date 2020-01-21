@@ -5,19 +5,15 @@ import jimp from 'jimp'
 
 const logoPath = path.join(`${__dirname}/snowball-logo.png`)
 const logoSize = 512
-const calcPos = (size, logoSize = logoSize) => (size - logoSize) / 2
+const calcPos = (size, logoDimension = logoSize) => (size - logoDimension) / 2
 const response = {}
 
 export const uploadEvents = [
   {
     event: 'fileBegin',
     action: (req, res, next, name, file) => {
-      try {
-        !fs.existsSync(__dirname + '/uploads') && fs.mkdirSync(__dirname + '/uploads')
-        file.path = path.join(__dirname + '/uploads/' + file.name)
-      } catch (ex) {
-        throw new Error(ex)
-      }
+      !fs.existsSync(__dirname + '/uploads') && fs.mkdirSync(__dirname + '/uploads')
+      file.path = path.join(__dirname + '/uploads/' + file.name)
     }
   },{
     event: 'file',
@@ -38,7 +34,6 @@ export const uploadEvents = [
 export default (req, res) => {
   const { resizePercent } = req.fields
   const { file } = req.files
-  // console.log('file:', file)
   console.log('resizePercent:', resizePercent)
 
   sizeOf(file.path, async (err, {width, height}) => {
@@ -61,12 +56,10 @@ export default (req, res) => {
       image.scale(factor)
     } else if (width < height) {
       logo.scale(width / logoSize)
-      // doesn't actually center the logo
-      image.blit(logo, calcPos(width), 0)
+      image.blit(logo, 0, calcPos(height, width))
     } else {
       logo.scale(height / logoSize)
-      // doesn't actually center the logo
-      image.blit(logo, 0, calcPos(height))
+      image.blit(logo, calcPos(width, height), 0)
     }
     await image.writeAsync(file.path)
   })

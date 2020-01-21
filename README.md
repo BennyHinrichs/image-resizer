@@ -1,11 +1,8 @@
 # Hello
 
-Thank you for visiting my repo.
-
-# Additional Possibilities
+Thank you for visiting my repo. Below are notes on possible future developments.
 
 ## Frontend
-
 - Filter by MIME type
 - Error handling for failed upload
 - Cap batch size
@@ -21,8 +18,10 @@ Thank you for visiting my repo.
 - Vertical for small screens
 
 ## Backend
-
 - Reject if not right MIME type
 - Use SVG so watermark can be consistently sized
 - Make copy instead of overwriting
 - Doesn't center logo if original image is small
+- Size limits
+- File expiration
+- Check if file already exists
